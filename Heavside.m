@@ -8,7 +8,7 @@
 %
 
 function [H,H_d] = Heavside(z,type)
-epsilon = 0.1;
+epsilon = 1;
 H = zeros(size(z,1),size(z,2));
 H_d = zeros(size(z,1),size(z,2));
 switch(type)
