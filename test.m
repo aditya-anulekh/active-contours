@@ -1,6 +1,6 @@
 clear; clc;
 
-img = imread('images/buildings.jpg');
+img = imread('images/shapes_2.jpg');
 if size(img,3) > 1
     img = rgb2gray(img);
 end
@@ -92,3 +92,9 @@ figure(h);
 subplot(2,4,5)
 imshow(A);
 title('MATLAB built-in function(activecontour)')
+drawnow;
+figure(h)
+subplot(2,4,6)
+B = segmentation(img,mask,iter,h);
+imshow(B)
+title('Image Segmentation using gradient')
