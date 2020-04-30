@@ -1,11 +1,4 @@
-clear; clc;
-
-img = imread('images/buildings.jpg');
-if size(img,3) > 1
-    img = rgb2gray(img);
-end
-% img = imnoise(img);
-img = im2double(img);
+function demo(img)
 dt = 0.5;
 lambda1 = 1;
 lambda2 = 1;
@@ -85,7 +78,10 @@ for i = 1:iter
     subplot(2,4,2)
     imshow(phi>0,[]);hold on;
     contour(phi>0,[0.5 0.5],'r');
-    title(i);
+%     w = strcat('Our Implementation \n Iteration Number',string(i));
+    title({
+        ['Our Implementation'] 
+        ['Iteration Number = ' num2str(i)]});
     drawnow;
 end
 A = activecontour(img,mask_original,iter,'Chan-Vese');
@@ -98,4 +94,4 @@ figure(h)
 subplot(2,4,6)
 B = segmentation(img,mask,iter,h);
 imshow(B)
-title('Image Segmentation using gradient')
+end

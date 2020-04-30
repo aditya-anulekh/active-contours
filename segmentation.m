@@ -24,7 +24,9 @@ for i = 1:iter
     if mod(i,10) == 0
         figure(figure_handle)
         imshow(phi1)
-        title(i)
+        title({
+            ['Image Segmentation using gradient']
+            ['Iteration Number = ' num2str(i)]})
         drawnow;
     end
 end
