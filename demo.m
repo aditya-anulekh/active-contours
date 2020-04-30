@@ -71,6 +71,7 @@ for i = 1:iter
     xlim([1,iter])
     ylim([0,1])
     ylabel('c2')
+    title('Averages inside(c1) and outside(c2) of the contour')
     drawnow;
     temp = dt*H_d.*(mu_value*K - lambda1*(img-c1).^2 + lambda2*(img-c2).^2);
     phi = phi + temp;
@@ -94,4 +95,5 @@ figure(h)
 subplot(2,4,6)
 B = segmentation(img,mask,iter,h);
 imshow(B)
+title('Image Segmentation using Gradient')
 end

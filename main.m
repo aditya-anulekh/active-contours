@@ -5,7 +5,7 @@
 
 %% Normal image
 clear; clc;
-img = imread('images/shapes.jpg');
+img = imread('images/world.jpg');
 if size(img,3) > 1
     img = rgb2gray(img);
 end
